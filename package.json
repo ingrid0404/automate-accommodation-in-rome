@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "prettier": "^3.3.3",
+    "selenium-webdriver": "^4.25.0"
+  },
+  "name": "selenium-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "mocha": "^10.7.3"
+  },
+  "scripts": {
+    "test": "npx mocha test/runningTest.spec.js --timeout 60000",
+    "fm:fix": "prettier --write \"**.{js,jsx,ts,tsx}\"",
+    "build":"npm run build"
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
