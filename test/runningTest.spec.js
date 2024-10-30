@@ -62,7 +62,6 @@ describe("UI test cases", () => {
     resultsPage.log("End of test case 01");
   });
 
-  /*
   it("test case 02", async () => {
     resultsPage = new ResultsPage(
       driver,
@@ -103,7 +102,6 @@ describe("UI test cases", () => {
     await resultsPage.checkMapSection();
     resultsPage.log("End of test case 03");
   });
-  */
 
   after(async () => await driver.quit());
 });
