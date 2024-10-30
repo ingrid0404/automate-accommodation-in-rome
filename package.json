@@ -14,9 +14,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "prettier": "^3.3.3",
-    "selenium-webdriver": "^4.25.0"
-  },
-  "devDependencies": {
-    "mocha": "^10.7.3"
+    "selenium-webdriver": "^4.25.0",
+    "mocha": "^6.1.4"
   }
 }
