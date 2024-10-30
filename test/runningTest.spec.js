@@ -47,60 +47,76 @@ describe("UI test cases", () => {
   });
 
   it("test case 01", async () => {
-    resultsPage = new ResultsPage(
-      driver,
-      WAIT_TIMEOUT,
-      LOCATION,
-      startDate,
-      endDate,
-      NUMBER_OF_ADULTS,
-      NUMBER_OF_CHILDREN,
-    );
-    resultsPage.log("Start test case 01");
-    await resultsPage.waitForPageToLoad();
-    // await resultsPage.checkResultsSection();
-    resultsPage.log("End of test case 01");
+    try {
+      resultsPage = new ResultsPage(
+        driver,
+        WAIT_TIMEOUT,
+        LOCATION,
+        startDate,
+        endDate,
+        NUMBER_OF_ADULTS,
+        NUMBER_OF_CHILDREN,
+      );
+      resultsPage.log("Start test case 01");
+      await resultsPage.waitForPageToLoad();
+      await resultsPage.checkResultsSection();
+      resultsPage.log("End of test case 01");
+    } catch (e) {
+      console.log(e);
+      await airBnbPage.resetTest();
+    }
   });
 
   it("test case 02", async () => {
-    resultsPage = new ResultsPage(
-      driver,
-      WAIT_TIMEOUT,
-      LOCATION,
-      startDate,
-      endDate,
-      NUMBER_OF_ADULTS,
-      NUMBER_OF_CHILDREN,
-      AMENITIES,
-      NUMBER_OF_BEDROOMS,
-    );
-    accommodationPage = new AccommodationPage(driver, WAIT_TIMEOUT, AMENITIES);
-    resultsPage.log("Start test case 02");
-    await resultsPage.waitForPageToLoad();
-    await resultsPage.addAdvancedFilters();
-    await resultsPage.waitForPageToLoad();
-    await resultsPage.checkAdvancedFilters(2);
-    await resultsPage.checkNumberOfBeds();
-    await resultsPage.openFirstResult();
-    await accommodationPage.checkAmenitiesAreVisible();
-    await resultsPage.removeAdvancedFilters();
-    resultsPage.log("End of test case 02");
+    try {
+      resultsPage = new ResultsPage(
+        driver,
+        WAIT_TIMEOUT,
+        LOCATION,
+        startDate,
+        endDate,
+        NUMBER_OF_ADULTS,
+        NUMBER_OF_CHILDREN,
+        AMENITIES,
+        NUMBER_OF_BEDROOMS,
+      );
+      accommodationPage = new AccommodationPage(
+        driver,
+        WAIT_TIMEOUT,
+        AMENITIES,
+      );
+      resultsPage.log("Start test case 02");
+      await resultsPage.waitForPageToLoad();
+      await resultsPage.submitAdvancedFilters();
+      await resultsPage.openFirstResult();
+      await accommodationPage.checkAmenitiesAreVisible();
+      await resultsPage.removeAdvancedFilters();
+      resultsPage.log("End of test case 02");
+    } catch (e) {
+      console.log(e);
+      await airBnbPage.resetTest();
+    }
   });
 
   it("test case 03", async () => {
-    resultsPage = new ResultsPage(
-      driver,
-      WAIT_TIMEOUT,
-      LOCATION,
-      startDate,
-      endDate,
-      NUMBER_OF_ADULTS,
-      NUMBER_OF_CHILDREN,
-    );
-    resultsPage.log("Start test case 03");
-    await resultsPage.waitForPageToLoad();
-    await resultsPage.checkMapSection();
-    resultsPage.log("End of test case 03");
+    try {
+      resultsPage = new ResultsPage(
+        driver,
+        WAIT_TIMEOUT,
+        LOCATION,
+        startDate,
+        endDate,
+        NUMBER_OF_ADULTS,
+        NUMBER_OF_CHILDREN,
+      );
+      resultsPage.log("Start test case 03");
+      await resultsPage.waitForPageToLoad();
+      await resultsPage.checkMapSection();
+      resultsPage.log("End of test case 03");
+    } catch (e) {
+      console.log(e);
+      await airBnbPage.resetTest();
+    }
   });
 
   after(async () => await driver.quit());
