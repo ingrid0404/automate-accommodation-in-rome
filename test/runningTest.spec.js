@@ -2,7 +2,6 @@ const { Builder } = require("selenium-webdriver");
 const fs = require("fs");
 require("dotenv").config();
 
-
 const BROWSER = process.env.BROWSER ?? "chrome";
 const WAIT_TIMEOUT = Number(process.env.WAIT_TIMEOUT) ?? 10000;
 const START_DATE = Number(process.env.START_DATE) ?? 7;
@@ -54,6 +53,10 @@ describe("UI test cases", function () {
     if (this.currentTest.state !== "passed") {
       console.log("Take screenshot");
       let currentDate = new Date();
+
+      if (!fs.existsSync("./screenshots")) {
+        fs.mkdirSync("./screenshots");
+      }
 
       fs.writeFileSync(
         `./screenshots/${this.currentTest.title} ${currentDate.toDateString()}.png`,
