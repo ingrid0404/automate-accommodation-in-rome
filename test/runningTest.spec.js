@@ -31,6 +31,7 @@ describe("UI test cases", function () {
   before(async () => {
     driver = await new Builder().forBrowser(BROWSER).build();
     await driver.manage().window().maximize();
+
     airBnbPage = new AirbnbPage(
       driver,
       WAIT_TIMEOUT,
@@ -63,6 +64,10 @@ describe("UI test cases", function () {
         await driver.takeScreenshot(),
         "base64",
       );
+
+      await airBnbPage.navigateToPage();
+      await airBnbPage.checkUrl();
+      await airBnbPage.submitFilters();
     }
   });
 
@@ -70,7 +75,7 @@ describe("UI test cases", function () {
     await driver.quit();
   });
 
-  it("test case 01", async function () {
+  it("test 1 - Verify that the results match the search criteria", async function () {
     resultsPage = new ResultsPage(
       driver,
       WAIT_TIMEOUT,
@@ -80,13 +85,17 @@ describe("UI test cases", function () {
       NUMBER_OF_ADULTS,
       NUMBER_OF_CHILDREN,
     );
-    resultsPage.log("Start test case 01");
+    resultsPage.log(
+      "Start test case Verify that the results match the search criteria",
+    );
     await resultsPage.waitForPageToLoad();
     await resultsPage.checkResultsSection();
-    resultsPage.log("End of test case 01");
+    resultsPage.log(
+      "End of test case Verify that the results match the search criteria",
+    );
   });
 
-  it("test case 02", async function () {
+  it("test 2 - Verify that the results and details page match the extra filters", async function () {
     resultsPage = new ResultsPage(
       driver,
       WAIT_TIMEOUT,
@@ -108,7 +117,7 @@ describe("UI test cases", function () {
     resultsPage.log("End of test case 02");
   });
 
-  it("test case 03", async function () {
+  it("test 3 - Verify that a property is displayed on the map correctly", async function () {
     resultsPage = new ResultsPage(
       driver,
       WAIT_TIMEOUT,
