@@ -1,15 +1,8 @@
 {
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "prettier": "^3.3.3",
-    "selenium-webdriver": "^4.25.0"
-  },
+ 
   "name": "selenium-challenge",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {
-    "mocha": "^10.7.3"
-  },
   "scripts": {
     "test": "npx mocha test/*.spec.js --timeout 60000",
     "test-debug": "npx mocha --debug 'test/*.spec.js' --timeout 60000",
@@ -17,5 +10,13 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "prettier": "^3.3.3",
+    "selenium-webdriver": "^4.25.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.7.3"
+  }
 }
