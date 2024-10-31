@@ -17,7 +17,7 @@ npm run test
 
 ## Failures
 
-When a test will fail, a screenshot is taken and saved in the __'./screenshots'__ folder.
+In case a test fails, a screenshot is taken and saved in the __'./screenshots'__ folder.
 
 ## Documentation
 
