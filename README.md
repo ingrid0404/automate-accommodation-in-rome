@@ -6,6 +6,8 @@ Technologies utilized in this project include Selenium for browser automation, M
 ## Run Locally
 You need to install [Node](https://nodejs.org/en/) on your machine. 
 
+Install dependencies with:
+
 ```sh
 npm install
 ```
