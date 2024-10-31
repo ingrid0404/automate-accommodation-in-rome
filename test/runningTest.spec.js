@@ -64,10 +64,6 @@ describe("UI test cases", function () {
         await driver.takeScreenshot(),
         "base64",
       );
-
-      await airBnbPage.navigateToPage();
-      await airBnbPage.checkUrl();
-      await airBnbPage.submitFilters();
     }
   });
 
@@ -86,12 +82,12 @@ describe("UI test cases", function () {
       NUMBER_OF_CHILDREN,
     );
     resultsPage.log(
-      "Start test case Verify that the results match the search criteria",
+      "Start test case - Verify that the results match the search criteria",
     );
     await resultsPage.waitForPageToLoad();
     await resultsPage.checkResultsSection();
     resultsPage.log(
-      "End of test case Verify that the results match the search criteria",
+      "End of test case - Verify that the results match the search criteria",
     );
   });
 
@@ -108,13 +104,16 @@ describe("UI test cases", function () {
       NUMBER_OF_BEDROOMS,
     );
     accommodationPage = new AccommodationPage(driver, WAIT_TIMEOUT, AMENITIES);
-    resultsPage.log("Start test case 02");
+    resultsPage.log(
+      "Start test case - Verify that the results and details page match the extra filters",
+    );
     await resultsPage.waitForPageToLoad();
     await resultsPage.submitAdvancedFilters();
     await resultsPage.openFirstResult();
     await accommodationPage.checkAmenitiesAreVisible();
-    await resultsPage.removeAdvancedFilters();
-    resultsPage.log("End of test case 02");
+    resultsPage.log(
+      "End of test case - Verify that the results and details page match the extra filters",
+    );
   });
 
   it("test 3 - Verify that a property is displayed on the map correctly", async function () {
@@ -127,9 +126,14 @@ describe("UI test cases", function () {
       NUMBER_OF_ADULTS,
       NUMBER_OF_CHILDREN,
     );
-    resultsPage.log("Start test case 03");
+    resultsPage.log(
+      "Start test case - Verify that a property is displayed on the map correctly",
+    );
     await resultsPage.waitForPageToLoad();
-    await resultsPage.checkMapSection();
-    resultsPage.log("End of test case 03");
+    await resultsPage.hoverOverFirstProperty();
+    await resultsPage.clickOnPinFromMap();
+    resultsPage.log(
+      "End of test case - Verify that a property is displayed on the map correctly",
+    );
   });
 });
