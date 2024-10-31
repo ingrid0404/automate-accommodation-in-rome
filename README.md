@@ -15,6 +15,13 @@ npm install
 npm run test
 ```
 
+## Running UI Test with reports
+
+Use this command to generate reports for failed tests.
+```sh
+npm run test-report
+```
+
 ## Failures
 
 In case a test fails, a screenshot is taken and saved in the __'./screenshots'__ folder.
