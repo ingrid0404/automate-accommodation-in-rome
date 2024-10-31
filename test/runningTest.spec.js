@@ -46,6 +46,7 @@ describe("UI test cases", function () {
 
   beforeEach(async function () {
     await airBnbPage.navigateToPage();
+    await airBnbPage.waitForPageToLoad();
     await airBnbPage.checkUrl();
     await airBnbPage.submitFilters();
   });
