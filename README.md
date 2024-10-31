@@ -17,7 +17,7 @@ npm run test
 
 ## Running UI Test with reports
 
-Use this command to generate reports for failed tests.
+Use this command to generate reports.
 ```sh
 npm run test-report
 ```
