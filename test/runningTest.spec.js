@@ -109,7 +109,8 @@ describe("UI test cases", function () {
     );
     await resultsPage.waitForPageToLoad();
     await resultsPage.submitAdvancedFilters();
-    await resultsPage.openFirstResult();
+    let accomodationName = await resultsPage.openFirstResult();
+    await accommodationPage.verifyAccomodationName(accomodationName);
     await accommodationPage.checkAmenitiesAreVisible();
     resultsPage.log(
       "End of test case - Verify that the results and details page match the extra filters",
