@@ -4,8 +4,8 @@ require("dotenv").config();
 
 const BROWSER = process.env.BROWSER ?? "chrome";
 const WAIT_TIMEOUT = Number(process.env.WAIT_TIMEOUT) ?? 10000;
-const START_DATE = Number(process.env.START_DATE) ?? 7;
-const END_DATE = Number(process.env.END_DATE) ?? 14;
+const START_DATE_OFFSET = Number(process.env.START_DATE_OFFSET) ?? 7;
+const END_DATE_OFFSET = Number(process.env.END_DATE_OFFSET) ?? 14;
 const NUMBER_OF_ADULTS = Number(process.env.NUMBER_OF_ADULTS) ?? 2;
 const NUMBER_OF_CHILDREN = Number(process.env.NUMBER_OF_CHILDREN) ?? 1;
 const LOCATION = process.env.LOCATION ?? "Rome, Italy";
@@ -23,9 +23,9 @@ let driver;
 
 let currentDate = new Date();
 let startDate = new Date();
-startDate.setDate(currentDate.getDate() + START_DATE);
+startDate.setDate(currentDate.getDate() + START_DATE_OFFSET);
 let endDate = new Date();
-endDate.setDate(currentDate.getDate() + END_DATE);
+endDate.setDate(currentDate.getDate() + END_DATE_OFFSET);
 
 describe("UI test cases", function () {
   before(async () => {
