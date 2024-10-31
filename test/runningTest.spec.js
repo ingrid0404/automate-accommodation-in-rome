@@ -8,7 +8,7 @@ const START_DATE = Number(process.env.START_DATE) ?? 7;
 const END_DATE = Number(process.env.END_DATE) ?? 14;
 const NUMBER_OF_ADULTS = Number(process.env.NUMBER_OF_ADULTS) ?? 2;
 const NUMBER_OF_CHILDREN = Number(process.env.NUMBER_OF_CHILDREN) ?? 1;
-const LOCATION = process.env.LOCATION ?? "rome";
+const LOCATION = process.env.LOCATION ?? "Rome, Italy";
 const AMENITIES = process.env.AMENITIES.split(" ") ?? ["Pool"];
 const NUMBER_OF_BEDROOMS = Number(process.env.NUMBER_OF_BEDROOMS) ?? 5;
 
