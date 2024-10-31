@@ -1,6 +1,7 @@
 # automate-accommodation-in-rome
 
-This is an automation project that has the purpose to automate finding accomodations in Rome, Italy.
+This is an automation project that has the purpose to facilitate the process of searching for accomodations in a specified location.
+Technologies utilized in this project include Selenium for browser automation, Mocha for testing, and npm (Node Package Manager) for managing project dependencies and scripts.
 
 ## Run Locally
 You need to install [Node](https://nodejs.org/en/) on your machine. 
