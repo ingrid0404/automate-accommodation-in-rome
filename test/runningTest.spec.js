@@ -3,14 +3,14 @@ const fs = require("fs");
 require("dotenv").config();
 
 const BROWSER = process.env.BROWSER ?? "chrome";
-const WAIT_TIMEOUT = Number(process.env.WAIT_TIMEOUT) ?? 10000;
-const START_DATE_OFFSET = Number(process.env.START_DATE_OFFSET) ?? 7;
-const END_DATE_OFFSET = Number(process.env.END_DATE_OFFSET) ?? 14;
-const NUMBER_OF_ADULTS = Number(process.env.NUMBER_OF_ADULTS) ?? 2;
-const NUMBER_OF_CHILDREN = Number(process.env.NUMBER_OF_CHILDREN) ?? 1;
+const WAIT_TIMEOUT = Number(process.env.WAIT_TIMEOUT ?? 10000);
+const START_DATE_OFFSET = Number(process.env.START_DATE_OFFSET ?? 7);
+const END_DATE_OFFSET = Number(process.env.END_DATE_OFFSET ?? 14);
+const NUMBER_OF_ADULTS = Number(process.env.NUMBER_OF_ADULTS ?? 2);
+const NUMBER_OF_CHILDREN = Number(process.env.NUMBER_OF_CHILDREN ?? 1);
 const LOCATION = process.env.LOCATION ?? "Rome, Italy";
-const AMENITIES = process.env.AMENITIES.split(" ") ?? ["Pool"];
-const NUMBER_OF_BEDROOMS = Number(process.env.NUMBER_OF_BEDROOMS) ?? 5;
+const AMENITIES = process.env.AMENITIES?.split(" ") ?? ["Pool"];
+const NUMBER_OF_BEDROOMS = Number(process.env.NUMBER_OF_BEDROOMS ?? 9);
 
 const AirbnbPage = require("../lib/pages/airbnb_page");
 const ResultsPage = require("../lib/pages/results_page");
