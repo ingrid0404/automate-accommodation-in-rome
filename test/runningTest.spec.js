@@ -10,7 +10,7 @@ const NUMBER_OF_ADULTS = Number(process.env.NUMBER_OF_ADULTS ?? 2);
 const NUMBER_OF_CHILDREN = Number(process.env.NUMBER_OF_CHILDREN ?? 1);
 const LOCATION = process.env.LOCATION ?? "Rome, Italy";
 const AMENITIES = process.env.AMENITIES?.split(" ") ?? ["Pool"];
-const NUMBER_OF_BEDROOMS = Number(process.env.NUMBER_OF_BEDROOMS ?? 9);
+const NUMBER_OF_BEDROOMS = Number(process.env.NUMBER_OF_BEDROOMS ?? 5);
 
 const AirbnbPage = require("../lib/pages/airbnb_page");
 const ResultsPage = require("../lib/pages/results_page");
