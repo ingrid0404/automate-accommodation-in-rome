@@ -33,6 +33,7 @@ In case a test fails, a screenshot is taken and saved in the __'./screenshots'__
 ## Documentation
 
 In order to customize the automations task create and .env file at the root of the project.
+Browser options: chrome, firefox, MicrosoftEdge
 
 #### .env
 
